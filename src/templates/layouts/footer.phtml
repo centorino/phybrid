@@ -1,0 +1,29 @@
+<div id="footer">
+  <div class="container">
+    <div class="col-md-3">
+      <div class="navi">
+        <ul>
+          <li><a href="<?php echo $env['ROOT_PATH']; ?>/index.html">Home</a></li>
+          <li><a href="<?php echo $env['ROOT_PATH']; ?>/contact.php">Contact</a></li>
+          <?php include 'li_link_pages.phtml'; ?>
+        </ul>
+      </div><!-- /navi -->
+    </div><!-- /col-md-3 -->
+    
+    <div class="col-md-9">
+      <p class="archives-title">Monthly Archives</p>
+      <div class="navi footer-archives">
+        <ul>
+          <?php include 'li_link_archives.phtml'; ?>
+        </ul>
+      </div><!-- /navi -->
+    </div><!-- /col-md-9 -->
+    
+    <div class="copyright">
+      <p>copyright © <?php echo date('Y').' '.$env['SITE_NAME']; ?>. All rights reserved.</p>
+    </div>
+    <div class="powered">
+      <p>powered by blog generate engine "Phybryd".</p>
+    </div>
+  </div>
+</div>

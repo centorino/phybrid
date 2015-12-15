@@ -1,0 +1,5 @@
+<?php
+  if (!isset($page_no)) $page_no = 1;
+  $post_min = $env['COUNT_PER_PAGE'] * ($page_no - 1);
+  $post_max = $env['COUNT_PER_PAGE'] * $page_no;
+  $total_page = ceil(count($posts) / $env['COUNT_PER_PAGE']);

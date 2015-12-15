@@ -1,0 +1,7 @@
+        <?php foreach($_SESSION['pages'] as $page) { ?>
+          <li>
+            <a href="<?php echo $env['ROOT_PATH'].'/'.$page->id.'.html'; ?>">
+              <?php echo $page->header->title; ?>
+            </a>
+          </li>
+        <?php } ?>

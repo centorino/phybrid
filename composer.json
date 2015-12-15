@@ -1,0 +1,27 @@
+{
+  "name": "centorino/phybryd",
+  "description": "[β] A php and slim framework based simple blog generate engine.",
+  "version": "0.0.1",
+  "keywords": ["php", "slim", "blog", "engine"],
+  "license": "MIT",
+  "homepage": "http://lazyconsole.com",
+  "authors": [
+    {
+      "name": "centorino",
+      "email": "lazyconsole.com@gmail.com",
+      "homepage": "http://lazyconsole.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">= 5.3.0",
+    "slim/slim": "2.*",
+    "petebrowne/slim-layout-view": ">= 0.3.0",
+    "michelf/php-markdown": ">= 1.4.0",
+    "components/jquery": "^2.1",
+    "twbs/bootstrap": "^3.3"
+  },
+  "autoload": {
+    "psr-4": { "Phybryd\\": "src/" }
+  }
+}

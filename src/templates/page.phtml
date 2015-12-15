@@ -1,0 +1,10 @@
+  <div class="page">
+  <?php if ($page) { ?>
+    <div class="page-contents">
+      <?php echo $page->contents; ?>
+    </div><!-- /page-contents -->
+  <?php } else { ?>
+    <?php echo ($body ? $body : ''); ?>
+  <?php } ?>
+  </div><!-- /page -->
+  

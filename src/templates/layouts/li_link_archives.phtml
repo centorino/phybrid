@@ -1,0 +1,5 @@
+    <?php if (isset($_SESSION['archives'])) { ?>
+      <?php foreach($_SESSION['archives'] as $row) { ?>
+        <li><a href="<?php echo $env['ROOT_PATH'].'/'.$row['y'].'/'.$row['m'].'/index.html'; ?>"><?php echo $row['y'].'-'.$row['m']; ?></a></li>
+      <?php } ?>
+    <?php } ?>

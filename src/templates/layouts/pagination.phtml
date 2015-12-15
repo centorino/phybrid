@@ -1,0 +1,46 @@
+<?php if ($env['PAGER_TYPE'] != 0 && $total_page > 1) { ?>
+  <nav>
+  <?php if ($env['PAGER_TYPE'] == 1) { ?>
+    <ul class="pager">
+      <?php if ($page_no > 1) { ?>
+      <li class="previous">
+        <?php if ($page_no <= 2) { ?>
+        <a href="<?php echo $env['ROOT_PATH'].'/index.html'; ?>">
+        <?php } else { ?>
+        <a href="<?php echo $env['ROOT_PATH'].'/pages/'.($page_no - 1).'/index.html'; ?>" aria-label="Previous">
+        <?php } ?>
+          <span aria-hidden="true">&larr;</span> Newer
+        </a>
+      </li>
+      <?php } ?>
+      <?php if ($page_no < $total_page) { ?>
+      <li class="next">
+        <a href="<?php echo $env['ROOT_PATH'].'/pages/'.($page_no == $total_page ? $page_no : $page_no + 1).'/index.html'; ?>">
+          Older <span aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+      <?php } ?>
+    </ul>
+  <?php } else if ($env['PAGER_TYPE'] == 2) { ?>
+    <ul class="pagination">
+      <li>
+        <?php if ($page_no <= 2) { ?>
+        <a href="<?php echo $env['ROOT_PATH'].'/index.html'; ?>" aria-label="Previous">
+        <?php } else { ?>
+        <a href="<?php echo $env['ROOT_PATH'].'/pages/'.($page_no - 1).'/index.html'; ?>" aria-label="Previous">
+        <?php } ?>
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <?php for($i = 1; $i <= $total_page; $i++) { ?>
+      <li<?php echo $i == $page_no ? ' class="active"' : ''; ?>><a href="<?php echo $env['ROOT_PATH'].'/'.($i == 1 ? '' : 'pages/'.$i.'/').'index.html'; ?>"><?php echo $i; ?></a></li>
+      <?php } ?>
+      <li>
+        <a href="<?php echo $env['ROOT_PATH'].'/pages/'.($page_no == $total_page ? $page_no : $page_no + 1).'/index.html'; ?>" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  <?php } ?>
+  </nav>
+<?php } ?>
