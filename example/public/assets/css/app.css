@@ -150,8 +150,25 @@ div, p {
   margin-left: -20px;
   margin-right: -20px;
 }
-.post h2 {
-  font-size: 32px;
+.post h1, .page h1 {
+  font-size: 24px;
+}
+.post h2, .page h2 {
+  font-size: 20px;
+}
+.post h3, .page h3 {
+  font-size: 18px;
+}
+.post h4, .page h4 {
+  font-size: 16px;
+  font-weight: bold;
+}
+.post h5, .page h5 {
+  font-size: 14px;
+}
+.post h6, .page h6 {
+  font-size: 12px;
+  font-weight: bold;
 }
 .post h1:first-child, .post h2:first-child, .post h3:first-child, .post h4:first-child, .post h5:first-child, .post h6:first-child,
 .page h1:first-child, .page h2:first-child, .page h3:first-child, .page h4:first-child, .page h5:first-child, .page h6:first-child {
@@ -248,6 +265,24 @@ div, p {
 }
 
 @media (min-width: 768px) {
+  .post h1, .page h1 {
+    font-size: 36px;
+  }
+  .post h2, .page h2 {
+    font-size: 30px;
+  }
+  .post h3, .page h3 {
+    font-size: 24px;
+  }
+  .post h4, .page h4 {
+    font-size: 18px;
+  }
+  .post h5, .page h5 {
+    font-size: 14px;
+  }
+  .post h6, .page h6 {
+    font-size: 12px;
+  }
   /**
    * header
    */
