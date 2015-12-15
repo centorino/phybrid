@@ -1,7 +1,7 @@
 Phybryd [β]
 ===========
 
-A php and slim framework based simple blog generate engine.
+A simple blog generate engine based on php and slim framework.
 
 Installation
 ------------

@@ -1,7 +1,7 @@
 <?php
   $env = array();
   $env['SITE_NAME'] = "Phybryd Blog";
-  $env['SITE_DESCRIPTION'] = "This blog is made by Phybryd. It's a php and slim framework based simple blog generate engine.";
+  $env['SITE_DESCRIPTION'] = "This blog is made by Phybryd. It's a simple blog generate engine based on php and slim framework.";
   
   $name = '';
   $email = '';

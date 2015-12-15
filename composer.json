@@ -1,6 +1,6 @@
 {
   "name": "centorino/phybryd",
-  "description": "[β] A php and slim framework based simple blog generate engine.",
+  "description": "[β] A simple blog generate engine based on php and slim framework.",
   "version": "0.0.1",
   "keywords": ["php", "slim", "blog", "engine"],
   "license": "MIT",

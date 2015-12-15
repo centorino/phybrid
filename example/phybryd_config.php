@@ -3,8 +3,8 @@ $env = $app->environment();
 
 // information of the site
 $env['SITE_NAME'] = "Phybryd Blog";
-$env['SITE_COPY'] = "A php and slim framework based simple blog generate engine";
-$env['SITE_DESCRIPTION'] = "This blog is made by Phybryd. It's a php and slim framework based simple blog generate engine.";
+$env['SITE_COPY'] = "A simple blog generate engine based on php and slim framework";
+$env['SITE_DESCRIPTION'] = "This blog is made by Phybryd. It's a simple blog generate engine based on php and slim framework.";
 
 // number of article per page
 $env['COUNT_PER_PAGE'] = 5;
