@@ -1,17 +1,17 @@
 <?php
-$app = \Slim\Slim::getInstance();
-$pattern = $app->router()->getCurrentRoute()->getPattern();
-$is_article = ($pattern == '/:y/:m/:d/:t');
+  $app = \Slim\Slim::getInstance();
+  $pattern = $app->router()->getCurrentRoute()->getPattern();
+  $is_article = ($pattern == '/:y/:m/:d/:t');
 ?>
   <div class="post">
   <?php if ($post) { ?>
-    <h2>
+    <h1>
       <?php if ($is_article) { ?>
       <?php echo $post->header->title; ?>
       <?php } else { ?>
       <a href="<?php echo $env['ROOT_PATH'].'/'.$post->id.'.html'; ?>"><?php echo $post->header->title; ?></a>
       <?php } ?>
-    </h2>
+    </h1>
     
     <div class="post-info">
       written
