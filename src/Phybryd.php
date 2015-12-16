@@ -80,7 +80,7 @@ class Phybryd {
           return;
         }
         
-        $app->render('post.phtml', array('env' => $env, 'title' => $post->header->title, 'post' => $post));
+        $app->render('post.phtml', array('env' => $env, 'header' => $post->header, 'post' => $post));
       }
     )->conditions(array('y' => '[0-9]+', 'm' => '[0-9]+', 'd' => '[0-9]+'));
     
@@ -120,7 +120,7 @@ class Phybryd {
       function () use ($app) {
         $env = $app->environment;
         
-        $app->render('404.phtml', array('env' => $env, 'title' => 'Not found', 'layout' => false));
+        $app->render('404.phtml', array('env' => $env, 'header' => array('title' => 'Not found'), 'layout' => false));
       }
     );
     
@@ -149,7 +149,7 @@ class Phybryd {
       return;
     }
     
-    $app->render('page.phtml', array('env' => $env, 'title' => $page->header->title, 'page' => $page));
+    $app->render('page.phtml', array('env' => $env, 'header' => $page->header, 'page' => $page));
   }
   static function get_pages_with_page_no($app, $page_no = 1) {
     $env = $app->environment;
@@ -173,6 +173,6 @@ class Phybryd {
       return;
     }
     
-    $app->render('archive.phtml', array('env' => $env, 'title' => 'Archive of '.$y.'-'.$m, 'posts' => $posts));
+    $app->render('archive.phtml', array('env' => $env, 'header' => array('title' => 'Archive of '.$y.'-'.$m), 'posts' => $posts));
   }
 }
