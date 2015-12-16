@@ -21,6 +21,9 @@ $env['IGNORE_PAGE_IDS'] = array(
   'thanks'
 );
 
+// google analytics tag tracking id
+$env['GOOGLE_ANALYTICS_ID'] = $app->settings['mode'] == 'production' ? 'XX-XXXXXXXX-X' : '';
+
 
 
 // internal path
