@@ -181,6 +181,10 @@ if (file_exists($contents_path.'/medias')) {
 /**
  * archive output directory as public/site.zip
  */
+if (file_exists($pub_path.'/site.zip')) {
+  unlink($pub_path.'/site.zip');
+  if ($debug) echo "removed public/site.zip\n";
+}
 system('cd '.$out_path.'; zip -q -r '.$pub_path.'/site.zip ./*');
 if ($debug) echo "zipped your site as public/site.zip\n";
 
