@@ -8,6 +8,11 @@ div, p {
   padding: 0;
 }
 
+a {
+  word-wrap : break-word;
+  overflow-wrap : break-word;
+}
+
 .debug-log {
   margin: 0;
   padding: 5px;
