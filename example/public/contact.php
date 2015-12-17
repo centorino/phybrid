@@ -115,10 +115,10 @@
         <div class="col-md-9"></div><!-- /col-md-9 -->
         
         <div class="copyright">
-          <p>copyright © 2015 Phybryd Blog. All rights reserved.</p>
+          <p>copyright © <?php echo date('Y').' '.$env['SITE_NAME']; ?>. All rights reserved.</p>
         </div>
         <div class="powered">
-          <p>powered by blog generate engine "Phybryd".</p>
+          <p>powered by blog generate engine <a href="https://github.com/centorino/phybryd/" target="_blank">Phybryd</a>.</p>
         </div>
       </div>
     </div>

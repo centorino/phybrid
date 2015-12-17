@@ -116,6 +116,14 @@ div, p {
   font-size: 10px;
   color: #bbb;
 }
+#footer .container .powered p a {
+  color: #bbb;
+  text-decoration: underline;
+}
+#footer .container .powered p a:hover {
+  color: #ddd;
+  text-decoration: none;
+}
 #footer .archives-title {
   margin: 20px 0 0 0;
   color: #bbb;
