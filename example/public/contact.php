@@ -26,7 +26,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact us - <?php echo $env['SITE_NAME']; ?></title>
-    <meta name="description" content="Contact us - <?php echo $env['SITE_DESCRIPTION']; ?>">
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>

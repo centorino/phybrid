@@ -21,14 +21,14 @@ class PhybrydPage {
     $file_text = file_get_contents($file);
     
     $file_header = substr($file_text, 0, strpos($file_text, '}') + 1);
-    $file_header = json_decode($file_header, false);
+    $file_header = json_decode($file_header, true);
     
     $page_path = ltrim(str_replace($env['PAGES_ROOT_PATH'], '', $file), '/');
     
     $this->id = str_replace('.'.$this->type, '', $page_path);
     $this->header = $file_header;
     
-    if (!isset($this->header->order)) $this->header->order = '';
+    if (!isset($this->header['order'])) $this->header['order'] = '';
     
     $file_body = substr_replace($file_text, '', 0, strpos($file_text, '}') + 2);
     
@@ -86,7 +86,7 @@ class PhybrydPage {
   }
   private static function cmp($a, $b)
   {
-    $cmp = strcmp($a->header->order, $b->header->order);
+    $cmp = strcmp($a->header['order'], $b->header['order']);
     return $cmp;
   }
   

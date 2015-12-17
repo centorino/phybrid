@@ -117,7 +117,7 @@ class PhybrydLib {
         
         if (!$tmp_page) continue;
         
-        $breadcrumbs[] = array('id' => $idx, 'text' => $tmp_page->header->title, 'url' => '/'.$tmp_page->id.'.html');
+        $breadcrumbs[] = array('id' => $idx, 'text' => $tmp_page->header['title'], 'url' => '/'.$tmp_page->id.'.html');
         $idx++;
       }
     } else {
@@ -131,7 +131,7 @@ class PhybrydLib {
         $breadcrumbs[] = array('id' => 2, 'text' => $params[1].'-'.$params[2], 'url' => '/'.$params[1].'/'.$params[2].'/index.html');
         
         if ($post) {
-          $breadcrumbs[] = array('id' => 3, 'text' => $post->header->title, 'url' => '/'.$params[1].'/'.$params[2].'/'.$params[3].'/'.$params[4]);
+          $breadcrumbs[] = array('id' => 3, 'text' => $post->header['title'], 'url' => '/'.$params[1].'/'.$params[2].'/'.$params[3].'/'.$params[4]);
         } else {
           $breadcrumbs[] = array('id' => 3, 'text' => $params[4], 'url' => '/'.$params[1].'/'.$params[2].'/'.$params[3].'/'.$params[4]);
         }

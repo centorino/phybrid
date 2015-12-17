@@ -120,7 +120,7 @@ class Phybryd {
       function () use ($app) {
         $env = $app->environment;
         
-        $app->render('404.phtml', array('env' => $env, 'header' => array('title' => 'Not found'), 'layout' => false));
+        $app->render('404.phtml', array('env' => $env, 'header' => Phybryd::init_header('Not found'), 'layout' => false));
       }
     );
     
@@ -173,6 +173,13 @@ class Phybryd {
       return;
     }
     
-    $app->render('archive.phtml', array('env' => $env, 'header' => array('title' => 'Archive of '.$y.'-'.$m), 'posts' => $posts));
+    $app->render('archive.phtml', array('env' => $env, 'header' => Phybryd::init_header('Archive of '.$y.'-'.$m), 'posts' => $posts));
+  }
+  static function init_header($title = null, $description = null, $keywords = null) {
+    return array(
+      'title' => $title,
+      'description' => $description,
+      'keywords' => $keywords
+    );
   }
 }

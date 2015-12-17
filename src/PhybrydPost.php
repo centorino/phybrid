@@ -22,7 +22,7 @@ class PhybrydPost {
     $file_text = file_get_contents($file);
     
     $file_header = substr($file_text, 0, strpos($file_text, '}') + 1);
-    $file_header = json_decode($file_header, false);
+    $file_header = json_decode($file_header, true);
     
     $article_path = ltrim(str_replace($env['ARTICLES_ROOT_PATH'], '', $file), '/');
     
