@@ -25,6 +25,9 @@ $env['IGNORE_PAGE_IDS'] = array(
 // google analytics tag tracking id
 $env['GOOGLE_ANALYTICS_ID'] = $app->settings['mode'] == 'production' ? 'XX-XXXXXXXX-X' : '';
 
+// google custome search engine id
+$env['GOOGLE_CUSTOME_SEARCH_ID'] = '';
+
 
 
 // internal path

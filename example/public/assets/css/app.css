@@ -28,12 +28,14 @@ a {
   border-bottom: solid 1px #f0f0f0;
   margin-bottom: 0;
 }
+#header>.container {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
 #header .navbar-header {
   max-width: 860px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 15px;
-  padding-bottom: 15px;
   position: relative;
 }
 #header .navbar-header .site-info {
@@ -284,6 +286,24 @@ a {
   border-color: #666;
 }
 
+/**
+ * google custom search engine
+ */
+.gcse-wrapper {
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gcse-wrapper .gsc-control-cse {
+  max-width: 640px;
+  padding: 5px 0 0;
+}
+.gcse-wrapper .gsc-control-cse .gsc-search-box {
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 0;
+}
+
 @media (min-width: 768px) {
   .post h1, .page h1 {
     font-size: 36px;
@@ -306,10 +326,12 @@ a {
   /**
    * header
    */
-  #header .navbar-header {
-    float: none;
+  #header>.container {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+  #header .navbar-header {
+    float: none;
   }
   #header .navbar-header .site-info h1 {
     font-size: 32px;
@@ -390,5 +412,11 @@ a {
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+  }
+  /**
+   * google custom search engine
+   */
+  .gcse-wrapper .gsc-control-cse {
+    padding: 20px 0 0;
   }
 }
