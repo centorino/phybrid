@@ -1,7 +1,7 @@
 {
   "name": "centorino/phybrid",
   "description": "[β] A simple blog generate engine based on php and slim framework.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": ["php", "slim", "blog", "engine"],
   "license": "MIT",
   "homepage": "http://lazyconsole.com",
