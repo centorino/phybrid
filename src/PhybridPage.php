@@ -1,12 +1,12 @@
 <?php
-namespace Phybryd;
+namespace Phybrid;
 
 use \Michelf\Markdown;
 
 /**
  * ページクラス
  */
-class PhybrydPage {
+class PhybridPage {
   public $id = null; // url
   public $type = null; // md,txt,html(htm)
   public $header = null;
@@ -48,14 +48,14 @@ class PhybrydPage {
     
     $pages = array();
     
-    $files = PhybrydLib::get_file_list($env['PAGES_ROOT_PATH']);
+    $files = PhybridLib::get_file_list($env['PAGES_ROOT_PATH']);
     
     foreach($files as $file) {
-      $page = new PhybrydPage($file, $app);
+      $page = new PhybridPage($file, $app);
       $pages[] = $page;
     }
     
-    usort($pages, '\Phybryd\PhybrydPage::cmp');
+    usort($pages, '\Phybrid\PhybridPage::cmp');
     
     return $pages;
   }
@@ -65,10 +65,10 @@ class PhybrydPage {
     
     $pages = array();
     
-    $files = PhybrydLib::get_file_list($env['PAGES_ROOT_PATH']);
+    $files = PhybridLib::get_file_list($env['PAGES_ROOT_PATH']);
     
     foreach($files as $file) {
-      $page = new PhybrydPage($file, $app);
+      $page = new PhybridPage($file, $app);
       $ignore = false;
       foreach($env['IGNORE_PAGE_IDS'] as $id) {
         if ($id == $page->id) {
@@ -80,7 +80,7 @@ class PhybrydPage {
       if (!$ignore) $pages[] = $page;
     }
     
-    usort($pages, '\Phybryd\PhybrydPage::cmp');
+    usort($pages, '\Phybrid\PhybridPage::cmp');
     
     return $pages;
   }
@@ -105,10 +105,10 @@ class PhybrydPage {
     $filename = $subdirs[count($subdirs) - 1];
     if (substr($filepath, -1, 1) == '/') $filename .= 'index';
     
-    $file = PhybrydLib::find_file($root_path, $filename);
+    $file = PhybridLib::find_file($root_path, $filename);
     if (!$file) return null;
     
-    $page = new PhybrydPage($file, $app);
+    $page = new PhybridPage($file, $app);
     
     return $page;
   }

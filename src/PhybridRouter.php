@@ -1,7 +1,7 @@
 <?php
-namespace Phybryd;
+namespace Phybrid;
 
-class PhybrydRouter extends \Slim\Router
+class PhybridRouter extends \Slim\Router
 {
     public function __construct($originalRouter)
     {

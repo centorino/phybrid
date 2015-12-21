@@ -1,13 +1,13 @@
 <?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SERVER['SCRIPT_NAME'] = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], '/'));
-    require '../phybryd_wget.php';
+    require '../phybrid_wget.php';
   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Phybryd generator form</title>
+    <title>Phybrid generator form</title>
     <?php if (isset($_GET['m']) && $_GET['m'] == '1' && file_exists('../your_web_site') && !file_exists('site.zip')) { ?>
     <meta http-equiv="refresh" content="3;URL=">
     <?php } ?>
@@ -86,7 +86,7 @@
   </head>
   <body>
     <div class="container">
-      <h1>Phybryd generator form</h1>
+      <h1>Phybrid generator form</h1>
       <form action="?m=1" method="POST">
         <p><input type="submit" value="generate"></p>
       </form>

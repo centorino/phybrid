@@ -1,12 +1,12 @@
 <?php
-namespace Phybryd;
+namespace Phybrid;
 
 use \Michelf\Markdown;
 
 /**
  * 投稿記事クラス
  */
-class PhybrydPost {
+class PhybridPost {
   public $id = null; // url
   public $url = array(); // y,m,d,t
   public $type = null; // md,txt,html(htm)
@@ -53,10 +53,10 @@ class PhybrydPost {
     
     $posts = array();
     
-    $files = PhybrydLib::get_file_list($env['ARTICLES_ROOT_PATH']);
+    $files = PhybridLib::get_file_list($env['ARTICLES_ROOT_PATH']);
     rsort($files);
     foreach($files as $file) {
-      $posts[] = new PhybrydPost($file, $app);
+      $posts[] = new PhybridPost($file, $app);
     }
     
     return $posts;
@@ -65,7 +65,7 @@ class PhybrydPost {
   public static function find($id, $app = null) {
     $env = $app->environment;
     
-    $posts = PhybrydPost::all($app);
+    $posts = PhybridPost::all($app);
     foreach($posts as $post) {
       if ($post->id == $id) {
         return $post;
@@ -80,11 +80,11 @@ class PhybrydPost {
     
     $posts = array();
     
-    $files = PhybrydLib::get_file_list($env['ARTICLES_ROOT_PATH'].'/'.$y.'/'.$m);
+    $files = PhybridLib::get_file_list($env['ARTICLES_ROOT_PATH'].'/'.$y.'/'.$m);
     rsort($files);
     
     foreach($files as $file) {
-      $post = new PhybrydPost($file, $app);
+      $post = new PhybridPost($file, $app);
       if ($post->url['y'] == $y &&
           $post->url['m'] == $m) {
         $posts[] = $post;
@@ -97,7 +97,7 @@ class PhybrydPost {
   public static function months($app = null) {
     $env = $app->environment;
     
-    $dirs = PhybrydLib::get_dir_list($env['ARTICLES_ROOT_PATH'].'/*', 0, 1);
+    $dirs = PhybridLib::get_dir_list($env['ARTICLES_ROOT_PATH'].'/*', 0, 1);
     rsort($dirs);
     
     $archives = array();

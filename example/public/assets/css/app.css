@@ -200,6 +200,10 @@ a {
 .post p:last-child, .page p:last-child {
   margin-bottom: 0;
 }
+.post hr, .page hr {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 .post ul, .post ol, .post dl,
 .page ul, .page ol, .page dl {
   margin-bottom: 40px;
@@ -208,8 +212,11 @@ a {
 .page ul:last-child, .page ol:last-child, .page dl:last-child {
   margin-bottom: 0;
 }
-.post ul li, .post ol li, .post dl dd,
-.page ul li, .page ol li, .page dl dd {
+.post ul li, .post ol li,
+.page ul li, .page ol li {
+  margin-bottom: 20px;
+}
+.post dl dd, .page dl dd {
   margin-bottom: 40px;
 }
 .post ul li:last-child, .post ol li:last-child, .post dl dd:last-child,

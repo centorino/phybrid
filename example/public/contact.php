@@ -1,7 +1,7 @@
 <?php
   $env = array();
-  $env['SITE_NAME'] = "Phybryd Blog";
-  $env['SITE_DESCRIPTION'] = "This blog is made by Phybryd. It's a simple blog generate engine based on php and slim framework.";
+  $env['SITE_NAME'] = "Phybrid Blog";
+  $env['SITE_DESCRIPTION'] = "This blog is made by Phybrid. It's a simple blog generate engine based on php and slim framework.";
   
   $name = '';
   $email = '';
@@ -117,7 +117,7 @@
           <p>copyright © <?php echo date('Y').' '.$env['SITE_NAME']; ?>. All rights reserved.</p>
         </div>
         <div class="powered">
-          <p>powered by blog generate engine <a href="https://github.com/centorino/phybryd/" target="_blank">Phybryd</a>.</p>
+          <p>powered by blog generate engine <a href="https://github.com/centorino/phybrid/" target="_blank">Phybrid</a>.</p>
         </div>
       </div>
     </div>

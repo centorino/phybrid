@@ -1,29 +1,29 @@
 <?php
-namespace Phybryd;
+namespace Phybrid;
 
-class Phybryd {
+class Phybrid {
   public static function initialize(array $settings) {
-    $settings['view'] = new \Phybryd\PhybrydView();
+    $settings['view'] = new \Phybrid\PhybridView();
     
     $app = new \Slim\Slim($settings);
     $app->setName('default');
-    $app->router = new \Phybryd\PhybrydRouter($app->router);
+    $app->router = new \Phybrid\PhybridRouter($app->router);
 
     $app->get('/404.html', function () use ($app) { $app->notFound(); });
     
     // GET root
     $app->get(
       '/',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function () use ($app) {
-        Phybryd::get_root($app);
+        Phybrid::get_root($app);
       }
     );
     $app->get(
       '/index.html',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function () use ($app) {
-        Phybryd::get_root($app);
+        Phybrid::get_root($app);
       }
     );
     
@@ -32,16 +32,16 @@ class Phybryd {
     // GET /pages/:page_no/
     $app->get(
       '/pages/:page_no/',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function ($page_no) use ($app) {
-        Phybryd::get_pages_with_page_no($app, $page_no);
+        Phybrid::get_pages_with_page_no($app, $page_no);
       }
     )->conditions(array('page_no' => '[0-9]+'));
     $app->get(
       '/pages/:page_no/index.html',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function ($page_no) use ($app) {
-        Phybryd::get_pages_with_page_no($app, $page_no);
+        Phybrid::get_pages_with_page_no($app, $page_no);
       }
     )->conditions(array('page_no' => '[0-9]+'));
     
@@ -57,7 +57,7 @@ class Phybryd {
         $size = filesize($env['MEDIAS_ROOT_PATH'].'/'.$filename);
         $contents = readfile($env['MEDIAS_ROOT_PATH'].'/'.$filename);
         
-        PhybrydLib::return_file_contents($app, $type, $filename, $size, $contents);
+        PhybridLib::return_file_contents($app, $type, $filename, $size, $contents);
       }
     );
     
@@ -66,14 +66,14 @@ class Phybryd {
     // GET /:y/:m/:d/:t
     $app->get(
       '/:y/:m/:d/:t',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function ($y, $m, $d, $t) use ($app) {
         $env = $app->environment;
         
         $filename = str_replace('.html', '', $t);
         $id = $y.'/'.$m.'/'.$d.'/'.$filename;
         
-        $post = PhybrydPost::find($id, $app);
+        $post = PhybridPost::find($id, $app);
         
         if (!$post) {
           $app->notFound();
@@ -89,16 +89,16 @@ class Phybryd {
     // GET /:y/:m
     $app->get(
       '/:y/:m/',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function ($y, $m) use ($app) {
-        Phybryd::get_ym($app, $y, $m);
+        Phybrid::get_ym($app, $y, $m);
       }
     )->conditions(array('y' => '[0-9]+', 'm' => '[0-9]+'));
     $app->get(
       '/:y/:m/index.html',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function ($y, $m) use ($app) {
-        Phybryd::get_ym($app, $y, $m);
+        Phybrid::get_ym($app, $y, $m);
       }
     )->conditions(array('y' => '[0-9]+', 'm' => '[0-9]+'));
     
@@ -107,9 +107,9 @@ class Phybryd {
     // GET *
     $app->get(
       '/.*?',
-      '\Phybryd\PhybrydLib::all_filter',
+      '\Phybrid\PhybridLib::all_filter',
       function () use ($app) {
-        Phybryd::get_page($app);
+        Phybrid::get_page($app);
       }
     );
     
@@ -120,7 +120,7 @@ class Phybryd {
       function () use ($app) {
         $env = $app->environment;
         
-        $app->render('404.phtml', array('env' => $env, 'header' => Phybryd::init_header('Not found'), 'layout' => false));
+        $app->render('404.phtml', array('env' => $env, 'header' => Phybrid::init_header('Not found'), 'layout' => false));
       }
     );
     
@@ -131,18 +131,18 @@ class Phybryd {
   static function get_root($app) {
     $env = $app->environment;
     
-    $page = PhybrydPage::find($env['PATH_INFO'], $app);
+    $page = PhybridPage::find($env['PATH_INFO'], $app);
     
     if ($page) {
-      Phybryd::get_page($app);
+      Phybrid::get_page($app);
     } else {
-      Phybryd::get_pages_with_page_no($app);
+      Phybrid::get_pages_with_page_no($app);
     }
   }
   static function get_page($app) {
     $env = $app->environment;
     
-    $page = PhybrydPage::find($env['PATH_INFO'], $app);
+    $page = PhybridPage::find($env['PATH_INFO'], $app);
     
     if (!$page) {
       $app->notFound();
@@ -154,7 +154,7 @@ class Phybryd {
   static function get_pages_with_page_no($app, $page_no = 1) {
     $env = $app->environment;
     
-    $posts = PhybrydPost::all($app);
+    $posts = PhybridPost::all($app);
     
     if (!$posts) {
       $app->notFound();
@@ -166,14 +166,14 @@ class Phybryd {
   static function get_ym($app, $y, $m) {
     $env = $app->environment;
     
-    $posts = PhybrydPost::find_by_month($y, $m, $app);
+    $posts = PhybridPost::find_by_month($y, $m, $app);
     
     if (!$posts) {
       $app->notFound();
       return;
     }
     
-    $app->render('archive.phtml', array('env' => $env, 'header' => Phybryd::init_header('Archive of '.$y.'-'.$m), 'posts' => $posts));
+    $app->render('archive.phtml', array('env' => $env, 'header' => Phybrid::init_header('Archive of '.$y.'-'.$m), 'posts' => $posts));
   }
   static function init_header($title = null, $description = null, $keywords = null) {
     return array(

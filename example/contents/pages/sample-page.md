@@ -27,4 +27,4 @@ And also you can write articles with html and plain text.
     <p>This page is written with Markdown</p>
     <a href="https://ja.wikipedia.org/wiki/Markdown" target="_blank">Markdown</a>
 
-__Enjoy "_Phybryd_" blogging life.__
+__Enjoy "_Phybrid_" blogging life.__
