@@ -1,5 +1,7 @@
 {
   "title": "Sample article",
+  "description": "",
+  "keywords": "",
   "author": "centorino",
   "created_at": "2015-12-14",
   "updated_at": ""

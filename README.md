@@ -1,7 +1,7 @@
-Phybryd [β]
+Phybrid [β]
 ===========
 
-A php and slim framework based simple blog generate engine.
+A simple blog generate engine based on php and slim framework.
 
 Installation
 ------------
@@ -12,22 +12,22 @@ Install composer.phar(to local directory)
 $ curl -sS https://getcomposer.org/installer | php
 ```
 
-Add `"centorino/phybryd"` to your `composer.json` file:
+Add `"centorino/phybrid"` to your `composer.json` file:
 
 ``` json
 {
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/centorino/phybryd.git"
+      "url": "https://github.com/centorino/phybrid.git"
     }
   ],
   "require": {
-    "centorino/phybryd": "*"
+    "centorino/phybrid": "*"
   },
   "scripts": {
     "post-install-cmd": [
-      "cp -f ./vendor/centorino/phybryd/utils/install.php . && php install.php"
+      "cp -f ./vendor/centorino/phybrid/utils/install.php . && php install.php"
     ]
   }
 }
@@ -47,11 +47,11 @@ Usage
 ### Generate static html
 #### generate your site
 ``` bash
-$ php phybryd_wget.php 
+$ php phybrid_wget.php 
 ```
 or
 ``` bash
-$ php phybryd_wget.php SCRIPT_NAME=(/ or /YourRootDir)
+$ php phybrid_wget.php SCRIPT_NAME=(/ or /YourRootDir)
 ```
 If your site is deployed sub directory, you should specify SCRIPT_NAME(=sub directory name).
 #### unzip to your document root
@@ -68,4 +68,4 @@ please wait...
 Copyright
 ---------
 
-Copyright (c) 2015 [centorino](https://github.com/centorino/phybryd/blob/master/LICENSE). See LICENSE for details.
+Copyright (c) 2015 [centorino](https://github.com/centorino/phybrid/blob/master/LICENSE). See LICENSE for details.

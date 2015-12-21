@@ -1,12 +1,12 @@
 <?php
-namespace Phybryd;
+namespace Phybrid;
 
 use \Michelf\Markdown;
 
 /**
  * ページクラス
  */
-class PhybrydPage {
+class PhybridPage {
   public $id = null; // url
   public $type = null; // md,txt,html(htm)
   public $header = null;
@@ -21,14 +21,14 @@ class PhybrydPage {
     $file_text = file_get_contents($file);
     
     $file_header = substr($file_text, 0, strpos($file_text, '}') + 1);
-    $file_header = json_decode($file_header, false);
+    $file_header = json_decode($file_header, true);
     
     $page_path = ltrim(str_replace($env['PAGES_ROOT_PATH'], '', $file), '/');
     
     $this->id = str_replace('.'.$this->type, '', $page_path);
     $this->header = $file_header;
     
-    if (!isset($this->header->order)) $this->header->order = '';
+    if (!isset($this->header['order'])) $this->header['order'] = '';
     
     $file_body = substr_replace($file_text, '', 0, strpos($file_text, '}') + 2);
     
@@ -48,14 +48,14 @@ class PhybrydPage {
     
     $pages = array();
     
-    $files = PhybrydLib::get_file_list($env['PAGES_ROOT_PATH']);
+    $files = PhybridLib::get_file_list($env['PAGES_ROOT_PATH']);
     
     foreach($files as $file) {
-      $page = new PhybrydPage($file, $app);
+      $page = new PhybridPage($file, $app);
       $pages[] = $page;
     }
     
-    usort($pages, '\Phybryd\PhybrydPage::cmp');
+    usort($pages, '\Phybrid\PhybridPage::cmp');
     
     return $pages;
   }
@@ -65,10 +65,10 @@ class PhybrydPage {
     
     $pages = array();
     
-    $files = PhybrydLib::get_file_list($env['PAGES_ROOT_PATH']);
+    $files = PhybridLib::get_file_list($env['PAGES_ROOT_PATH']);
     
     foreach($files as $file) {
-      $page = new PhybrydPage($file, $app);
+      $page = new PhybridPage($file, $app);
       $ignore = false;
       foreach($env['IGNORE_PAGE_IDS'] as $id) {
         if ($id == $page->id) {
@@ -80,13 +80,13 @@ class PhybrydPage {
       if (!$ignore) $pages[] = $page;
     }
     
-    usort($pages, '\Phybryd\PhybrydPage::cmp');
+    usort($pages, '\Phybrid\PhybridPage::cmp');
     
     return $pages;
   }
   private static function cmp($a, $b)
   {
-    $cmp = strcmp($a->header->order, $b->header->order);
+    $cmp = strcmp($a->header['order'], $b->header['order']);
     return $cmp;
   }
   
@@ -105,10 +105,10 @@ class PhybrydPage {
     $filename = $subdirs[count($subdirs) - 1];
     if (substr($filepath, -1, 1) == '/') $filename .= 'index';
     
-    $file = PhybrydLib::find_file($root_path, $filename);
+    $file = PhybridLib::find_file($root_path, $filename);
     if (!$file) return null;
     
-    $page = new PhybrydPage($file, $app);
+    $page = new PhybridPage($file, $app);
     
     return $page;
   }

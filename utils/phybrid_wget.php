@@ -19,10 +19,10 @@ if ($argv != null) {
       echo "\n";
       echo "usage:\n";
       echo "  If you have a blog is http://example.com/\n";
-      echo "    $ php phybryd_wget.php SCRIPT_NAME=/\n";
+      echo "    $ php phybrid_wget.php SCRIPT_NAME=/\n";
       echo "\n";
       echo "  And, if you have http://example.com/myblog\n";
-      echo "    $ php phybryd_wget.php SCRIPT_NAME=/myblog\n";
+      echo "    $ php phybrid_wget.php SCRIPT_NAME=/myblog\n";
       echo "\n";
       exit;
     } else {
@@ -63,7 +63,7 @@ $count_per_page = $app->environment['COUNT_PER_PAGE'];
 /**
  * download monthly archived pages and individual article pages
  */
-$posts = Phybryd\PhybrydPost::all($app);
+$posts = Phybrid\PhybridPost::all($app);
 foreach($posts as $post) {
   $ymd = array($post->url['y'], $post->url['m'], $post->url['d']);
   if (!file_exists($out_path.'/'.implode('/', $ymd))) {
@@ -104,7 +104,7 @@ foreach($posts as $post) {
 /**
  * download individual free pages
  */
-$pages = Phybryd\PhybrydPage::fullall($app);
+$pages = Phybrid\PhybridPage::fullall($app);
 foreach($pages as $page) {
   $fullpath_arr = explode('/', $page->id);
   $path_arr = array();
@@ -160,7 +160,7 @@ foreach($files as $file) {
   $info = new \SplFileInfo($file);
   if ($info->getExtension() != 'php') continue;
   
-  if ($info->getFileName() == 'index.php' || $info->getFileName() == 'phybryd_generator.php') continue;
+  if ($info->getFileName() == 'index.php' || $info->getFileName() == 'phybrid_generator.php') continue;
   
   copy($file, $out_path.'/'.$info->getFileName());
   if ($debug) echo 'copied '.$file."\n";
@@ -181,6 +181,10 @@ if (file_exists($contents_path.'/medias')) {
 /**
  * archive output directory as public/site.zip
  */
+if (file_exists($pub_path.'/site.zip')) {
+  unlink($pub_path.'/site.zip');
+  if ($debug) echo "removed public/site.zip\n";
+}
 system('cd '.$out_path.'; zip -q -r '.$pub_path.'/site.zip ./*');
 if ($debug) echo "zipped your site as public/site.zip\n";
 

@@ -1,7 +1,7 @@
 <?php
   $env = array();
-  $env['SITE_NAME'] = "Phybryd Blog";
-  $env['SITE_DESCRIPTION'] = "This blog is made by Phybryd. It's a php and slim framework based simple blog generate engine.";
+  $env['SITE_NAME'] = "Phybrid Blog";
+  $env['SITE_DESCRIPTION'] = "This blog is made by Phybrid. It's a simple blog generate engine based on php and slim framework.";
   
   $name = '';
   $email = '';
@@ -26,7 +26,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact us - <?php echo $env['SITE_NAME']; ?></title>
-    <meta name="description" content="Contact us - <?php echo $env['SITE_DESCRIPTION']; ?>">
     
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -115,10 +114,10 @@
         <div class="col-md-9"></div><!-- /col-md-9 -->
         
         <div class="copyright">
-          <p>copyright © 2015 Phybryd Blog. All rights reserved.</p>
+          <p>copyright © <?php echo date('Y').' '.$env['SITE_NAME']; ?>. All rights reserved.</p>
         </div>
         <div class="powered">
-          <p>powered by blog generate engine "Phybryd".</p>
+          <p>powered by blog generate engine <a href="https://github.com/centorino/phybrid/" target="_blank">Phybrid</a>.</p>
         </div>
       </div>
     </div>

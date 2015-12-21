@@ -28,8 +28,8 @@ $settings = array(
   'view' => '\Slim\LayoutView',
   'layout' => './layouts/layout.phtml'
 );
-$app = \Phybryd\Phybryd::initialize($settings);
-require $_SERVER['DOCUMENT_ROOT'].'/../phybryd_config.php';
+$app = \Phybrid\Phybrid::initialize($settings);
+require $_SERVER['DOCUMENT_ROOT'].'/../phybrid_config.php';
 
 
 

@@ -1,9 +1,9 @@
 <?php
 
-$src_path="./vendor/centorino/phybryd";
+$src_path="./vendor/centorino/phybrid";
 
 echo "\n";
-echo "phybryd installer start...\n";
+echo "phybrid installer start...\n";
 echo "\n";
 
 if (!file_exists('contents')) {
@@ -18,16 +18,16 @@ if (!file_exists('public')) {
   echo "copied example public directory.\n";
 }
 
-if (!file_exists('phybryd_config.php')) {
-  copy($src_path.'/example/phybryd_config.php', 'phybryd_config.php');
-  echo "copied phybryd_config.php\n";
+if (!file_exists('phybrid_config.php')) {
+  copy($src_path.'/example/phybrid_config.php', 'phybrid_config.php');
+  echo "copied phybrid_config.php\n";
 }
 
-if (!file_exists('phybryd_wget.php')) {
-  copy($src_path.'/utils/phybryd_wget.php', 'phybryd_wget.php');
-  echo "copied phybryd_wget.php\n";
+if (!file_exists('phybrid_wget.php')) {
+  copy($src_path.'/utils/phybrid_wget.php', 'phybrid_wget.php');
+  echo "copied phybrid_wget.php\n";
 }
 
 echo "\n";
-echo "phybryd installer finished.\n";
+echo "phybrid installer finished.\n";
 echo "\n";
