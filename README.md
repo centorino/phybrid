@@ -47,11 +47,11 @@ Usage
 ### Generate static html
 #### generate your site
 ``` bash
-$ php phybrid_wget.php 
+$ php phybrid_generator.php 
 ```
 or
 ``` bash
-$ php phybrid_wget.php SCRIPT_NAME=(/ or /YourRootDir)
+$ php phybrid_generator.php SCRIPT_NAME=(/ or /YourRootDir)
 ```
 If your site is deployed sub directory, you should specify SCRIPT_NAME(=sub directory name).
 #### unzip to your document root

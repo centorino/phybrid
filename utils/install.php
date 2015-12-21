@@ -23,9 +23,9 @@ if (!file_exists('phybrid_config.php')) {
   echo "copied phybrid_config.php\n";
 }
 
-if (!file_exists('phybrid_wget.php')) {
-  copy($src_path.'/utils/phybrid_wget.php', 'phybrid_wget.php');
-  echo "copied phybrid_wget.php\n";
+if (!file_exists('phybrid_generator.php')) {
+  copy($src_path.'/utils/phybrid_generator.php', 'phybrid_generator.php');
+  echo "copied phybrid_generator.php\n";
 }
 
 echo "\n";
