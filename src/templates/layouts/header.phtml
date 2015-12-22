@@ -23,11 +23,11 @@
     <div class="collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="<?php echo $env['ROOT_PATH']; ?>/index.html">Home</a></li>
-        <?php include 'li_link_archives.phtml'; ?>
+        <?php include \Phybrid\PhybridView::include_path('layouts/li_link_archives.phtml'); ?>
         <li><a href="<?php echo $env['ROOT_PATH']; ?>/contact.php">Contact</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
     
-<?php include 'google_custom_search.phtml'; ?>
+<?php include \Phybrid\PhybridView::include_path('layouts/google_custom_search.phtml'); ?>
 </div><!-- /.container -->
 </nav>

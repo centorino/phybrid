@@ -24,9 +24,9 @@ $settings = array(
   'debug' => true,
   'log.enabled' => false,
   'log.level' => \Slim\Log::DEBUG,
-  'templates.path' => $_SERVER['DOCUMENT_ROOT'],
+  'templates.path' => $_SERVER['DOCUMENT_ROOT']."/templates",
   'view' => '\Slim\LayoutView',
-  'layout' => './layouts/layout.phtml'
+  'layout' => 'layouts/layout.phtml'
 );
 $app = \Phybrid\Phybrid::initialize($settings);
 require $_SERVER['DOCUMENT_ROOT'].'/../phybrid_config.php';

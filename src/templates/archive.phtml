@@ -1,7 +1,7 @@
   <div class="posts">
     <?php
       foreach($posts as $post) {
-        include 'post.phtml';
+        include \Phybrid\PhybridView::include_path('post.phtml');
       }
     ?>
   </div>

@@ -5,7 +5,7 @@
         <ul>
           <li><a href="<?php echo $env['ROOT_PATH']; ?>/index.html">Home</a></li>
           <li><a href="<?php echo $env['ROOT_PATH']; ?>/contact.php">Contact</a></li>
-          <?php include 'li_link_pages.phtml'; ?>
+          <?php include \Phybrid\PhybridView::include_path('layouts/li_link_pages.phtml'); ?>
         </ul>
       </div><!-- /navi -->
     </div><!-- /col-md-3 -->
@@ -14,7 +14,7 @@
       <p class="archives-title">Monthly Archives</p>
       <div class="navi footer-archives">
         <ul>
-          <?php include 'li_link_archives.phtml'; ?>
+          <?php include \Phybrid\PhybridView::include_path('layouts/li_link_archives.phtml'); ?>
         </ul>
       </div><!-- /navi -->
     </div><!-- /col-md-9 -->
