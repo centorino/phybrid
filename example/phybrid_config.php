@@ -16,14 +16,17 @@ $env['PAGER_TYPE'] = 1; // 0: none, 1:pager , 2:pagination
 $env['RELATIVE_PATH_MODE'] = true;
 $env['ROOT_PATH'] = $env['SCRIPT_NAME'];
 
-// ignore pages for all display in pages.phtml
+// ignore pages for all display in li_link_pages.phtml
 $env['IGNORE_PAGE_IDS'] = array(
   'index',
   'thanks'
 );
 
 // google analytics tag tracking id
-$env['GOOGLE_ANALYTICS_ID'] = $app->settings['mode'] == 'production' ? 'XX-XXXXXXXX-X' : '';
+$env['GOOGLE_ANALYTICS_ID'] = $app->settings['mode'] == 'production' ? '' : '';
+
+// google custome search engine id
+$env['GOOGLE_CUSTOME_SEARCH_ID'] = '';
 
 
 

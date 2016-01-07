@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-<?php include 'head.phtml'; ?>
+<?php include \Phybrid\PhybridView::include_path('layouts/head.phtml'); ?>
 
   </head>
   <body>
-    <?php include 'header.phtml'; ?>
+    <?php include \Phybrid\PhybridView::include_path('layouts/header.phtml'); ?>
     
     <div class="contents-wrapper">
       <div class="container">
-        <?php include 'breadcrumb.phtml'; ?>
+        <?php include \Phybrid\PhybridView::include_path('layouts/breadcrumb.phtml'); ?>
         
         <?php echo $yield; ?>
       </div>
     </div><!-- /.container -->
     
-    <?php include 'footer.phtml'; ?>
+    <?php include \Phybrid\PhybridView::include_path('layouts/footer.phtml'); ?>
   </body>
 </html>

@@ -1,15 +1,15 @@
-  <?php include 'layouts/pagination_params.phtml'; ?>
+  <?php include \Phybrid\PhybridView::include_path('layouts/pagination_params.phtml'); ?>
   
-  <?php include 'layouts/pagination.phtml'; ?>
+  <?php include \Phybrid\PhybridView::include_path('layouts/pagination.phtml'); ?>
   
   <div class="posts">
     <?php
       foreach($posts as $key => $post) {
         if ($key >= $post_max) break;
         if ($key < $post_min) continue;
-        include 'post.phtml';
+        include \Phybrid\PhybridView::include_path('post.phtml');
       }
     ?>
   </div>
   
-  <?php include 'layouts/pagination.phtml'; ?>
+  <?php include \Phybrid\PhybridView::include_path('layouts/pagination.phtml'); ?>
