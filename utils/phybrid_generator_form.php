@@ -3,6 +3,11 @@
     $_SERVER['SCRIPT_NAME'] = substr($_SERVER['SCRIPT_NAME'], 0, strrpos($_SERVER['SCRIPT_NAME'], '/'));
     require '../phybrid_generator.php';
   }
+  if (isset($_GET['m']) && $_GET['m'] == '2') {
+    // unzip
+    system('unzip site.zip -d site >/dev/null 2>&1');
+    system('rm site.zip >/dev/null 2>&1');
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -107,6 +112,7 @@
       <p>
         <b>Latest archived your site:</b>
         <a href="site.zip">Download</a>
+        <a href="?m=2">Unzip</a>
       </p>
     <?php } ?>
     </div>
